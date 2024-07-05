@@ -1,0 +1,1764 @@
+Namespace(
+	logger = <tassn.utils.config.Logger object at 0x0000018B5B0CE380>,
+	idx_cols = ['uid', 'tid'],
+	ptord_cols = ['ipnt'],
+	tw_cols = ['itw'],
+	space_cols = ['lng', 'lat'],
+	time_cols = ['timestamp'],
+	label_cols = ['mode'],
+	weight_cols = ['dtw'],
+	feat_cols = ['dt', 'dl', 'v', 'a', 'w', 'distmin', 'nstops', 'distrd', 'distrl'],
+	seed = 1,
+	M = 5,
+	C = 9,
+	num_conv = 6,
+	dim_conv = 128,
+	kernel_size = 3,
+	dim_out_cnn = 128,
+	pdrop_cnn = 0.5,
+	dim_hidden = 128,
+	pdrop_agg = 0.5,
+	n_rnn = 3,
+	pdrop_rnn = 0.3,
+	cutter_kwargs = {'nsmp_max': 2048, 'max_empty_ratio': 0.6, 'B_min': 3, 'sort': True},
+	algo = adam,
+	schedule_kwargs = {'policy': 'warmup', 'step_peak': 2, 'step_half': 4, 'peak': 1},
+	epoch_stg1 = 15,
+	epoch_stg2 = 15,
+	B_stg1 = 64,
+	B_stg2 = 64,
+	enc_stg1 = agg,
+	enc_stg2 = rnn,
+	lr = 0.001,
+	tol = 1e-06,
+	dpo_kwargs = {'dtmin': 2, 'dtmax': 330, 'lmd': 20, 'ita': 0.5},
+	verbose = 1,
+	min_pnt = 3,
+	min_duration = 60,
+	root_data = data/,
+)
+======== [Case usersplit] ========
+------- [usersplit / Fold 0] -------
+dropout points...remain 15.35% (415933/2710186), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 0]: [Loss = 0.95540386], lr = 0.000500, Elapsed: 10.52 s
+dropout points...remain 15.83% (428889/2710186), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 1]: [Loss = 0.83858202], lr = 0.001000, Elapsed: 19.19 s
+dropout points...remain 15.90% (430891/2710186), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 2]: [Loss = 0.77462071], lr = 0.000841, Elapsed: 27.93 s
+dropout points...remain 15.68% (425064/2710186), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 3]: [Loss = 0.73778734], lr = 0.000707, Elapsed: 36.60 s
+dropout points...remain 15.36% (416420/2710186), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 4]: [Loss = 0.70267516], lr = 0.000595, Elapsed: 44.88 s
+dropout points...remain 15.08% (408709/2710186), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 5]: [Loss = 0.68644610], lr = 0.000500, Elapsed: 53.24 s
+dropout points...remain 15.13% (409958/2710186), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 6]: [Loss = 0.65466156], lr = 0.000420, Elapsed: 61.74 s
+dropout points...remain 14.95% (405141/2710186), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 7]: [Loss = 0.64632881], lr = 0.000354, Elapsed: 70.23 s
+dropout points...remain 15.79% (427998/2710186), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 8]: [Loss = 0.63716199], lr = 0.000297, Elapsed: 78.62 s
+dropout points...remain 16.37% (443566/2710186), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 9]: [Loss = 0.62712204], lr = 0.000250, Elapsed: 87.40 s
+dropout points...remain 16.06% (435289/2710186), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 10]: [Loss = 0.62129730], lr = 0.000210, Elapsed: 96.45 s
+dropout points...remain 15.19% (411643/2710186), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 11]: [Loss = 0.60447176], lr = 0.000177, Elapsed: 105.41 s
+dropout points...remain 15.39% (417094/2710186), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 12]: [Loss = 0.59218490], lr = 0.000149, Elapsed: 114.55 s
+dropout points...remain 15.54% (421216/2710186), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 13]: [Loss = 0.57469413], lr = 0.000125, Elapsed: 123.28 s
+dropout points...remain 15.95% (432282/2710186), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 14]: [Loss = 0.59769571], lr = 0.000105, Elapsed: 132.17 s
+dropout points...remain 15.33% (415383/2710186), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 15]: [Loss = 0.75485488], lr = 0.000500, Elapsed: 143.37 s
+dropout points...remain 15.58% (422326/2710186), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 16]: [Loss = 0.58362118], lr = 0.001000, Elapsed: 154.44 s
+dropout points...remain 15.44% (418507/2710186), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 17]: [Loss = 0.49655912], lr = 0.000841, Elapsed: 165.30 s
+dropout points...remain 15.00% (406404/2710186), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 18]: [Loss = 0.45838642], lr = 0.000707, Elapsed: 176.05 s
+dropout points...remain 16.30% (441667/2710186), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 19]: [Loss = 0.41691626], lr = 0.000595, Elapsed: 186.46 s
+dropout points...remain 15.04% (407515/2710186), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 20]: [Loss = 0.39345562], lr = 0.000500, Elapsed: 196.84 s
+dropout points...remain 15.98% (432960/2710186), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 21]: [Loss = 0.37606144], lr = 0.000420, Elapsed: 207.35 s
+dropout points...remain 15.08% (408721/2710186), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 22]: [Loss = 0.36489744], lr = 0.000354, Elapsed: 217.99 s
+dropout points...remain 15.61% (423058/2710186), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 23]: [Loss = 0.35488854], lr = 0.000297, Elapsed: 229.16 s
+dropout points...remain 15.24% (413140/2710186), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 24]: [Loss = 0.34314014], lr = 0.000250, Elapsed: 241.14 s
+dropout points...remain 15.04% (407504/2710186), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 25]: [Loss = 0.33563653], lr = 0.000210, Elapsed: 251.76 s
+dropout points...remain 15.32% (415090/2710186), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 26]: [Loss = 0.32945764], lr = 0.000177, Elapsed: 263.15 s
+dropout points...remain 15.20% (411921/2710186), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 27]: [Loss = 0.32345881], lr = 0.000149, Elapsed: 274.22 s
+dropout points...remain 15.74% (426606/2710186), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 28]: [Loss = 0.31786854], lr = 0.000125, Elapsed: 285.38 s
+dropout points...remain 14.75% (399845/2710186), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 29]: [Loss = 0.32176747], lr = 0.000105, Elapsed: 296.19 s
+************ 5 ************
+calculating x and y...done.
+--point--
+acc:	**78.48%**   f1-score:	**76.89%** 
+ [[ 68809   1568   1533    746    237]
+ [ 21158 118776   4274     90     89]
+ [ 39521   3029 132275  19639    575]
+ [   475    288   1043  14722      5]
+ [   156      8     14    927  13237]]
+Confusion Matrix - point
+[[94.4  2.2  2.1  1.   0.3]
+ [14.7 82.3  3.   0.1  0.1]
+ [20.3  1.6 67.8 10.1  0.3]
+ [ 2.9  1.7  6.3 89.   0. ]
+ [ 1.1  0.1  0.1  6.5 92.3]]
+N_trajectory: 1973
+N_tripleg_true: 2430
+N_tripleg_pred: 2781
+mae_transfer: 0.742798
+************ 10 ************
+calculating x and y...done.
+--point--
+acc:	**78.83%**   f1-score:	**76.88%** 
+ [[36616   984   732   440   194]
+ [ 9394 61819  2235    72    14]
+ [20540  1569 69919 11196   309]
+ [  244   164   450  7756    17]
+ [   98     4     0   515  6973]]
+Confusion Matrix - point
+[[94.   2.5  1.9  1.1  0.5]
+ [12.8 84.1  3.   0.1  0. ]
+ [19.8  1.5 67.5 10.8  0.3]
+ [ 2.8  1.9  5.2 89.9  0.2]
+ [ 1.3  0.1  0.   6.8 91.9]]
+N_trajectory: 1969
+N_tripleg_true: 2426
+N_tripleg_pred: 2792
+mae_transfer: 0.729596
+************ 15 ************
+calculating x and y...done.
+--point--
+acc:	**78.89%**   f1-score:	**76.96%** 
+ [[25775   737   542   245   127]
+ [ 6028 42160  1512    47    10]
+ [14312  1142 47926  7575   186]
+ [  170   108   505  5192     5]
+ [   78     2     9   335  4814]]
+Confusion Matrix - point
+[[94.   2.7  2.   0.9  0.5]
+ [12.1 84.7  3.   0.1  0. ]
+ [20.1  1.6 67.4 10.6  0.3]
+ [ 2.8  1.8  8.4 86.8  0.1]
+ [ 1.5  0.   0.2  6.4 91.9]]
+N_trajectory: 1964
+N_tripleg_true: 2421
+N_tripleg_pred: 2791
+mae_transfer: 0.726972
+************ 30 ************
+calculating x and y...done.
+--point--
+acc:	**78.74%**   f1-score:	**77.05%** 
+ [[14374   424   398    71    69]
+ [ 3196 21679   817    52     1]
+ [ 7653   602 25494  3806    76]
+ [  127    67   518  2574     2]
+ [   42     1     5   102  2640]]
+Confusion Matrix - point
+[[93.7  2.8  2.6  0.5  0.4]
+ [12.4 84.2  3.2  0.2  0. ]
+ [20.3  1.6 67.7 10.1  0.2]
+ [ 3.9  2.  15.8 78.3  0.1]
+ [ 1.5  0.   0.2  3.7 94.6]]
+N_trajectory: 1944
+N_tripleg_true: 2399
+N_tripleg_pred: 2773
+mae_transfer: 0.734473
+************ 60 ************
+calculating x and y...done.
+--point--
+acc:	**76.14%**   f1-score:	**74.52%** 
+ [[ 8027   212   231    34    36]
+ [ 2052 10994   536    37     3]
+ [ 4338   291 12965  2429    44]
+ [  116    31   412  1295     4]
+ [   31     1     0    52  1468]]
+Confusion Matrix - point
+[[94.   2.5  2.7  0.4  0.4]
+ [15.1 80.7  3.9  0.3  0. ]
+ [21.6  1.5 64.6 12.1  0.2]
+ [ 6.2  1.7 22.2 69.7  0.2]
+ [ 2.   0.1  0.   3.4 94.6]]
+N_trajectory: 1916
+N_tripleg_true: 2367
+N_tripleg_pred: 2755
+mae_transfer: 0.777355
+************ 120 ************
+calculating x and y...done.
+--point--
+acc:	**68.51%**   f1-score:	**68.36%** 
+ [[4438   91  172   51   33]
+ [1501 4512 1326   21    2]
+ [2390  238 6601 1520   36]
+ [ 108   20  227  700    0]
+ [  20    2    0   62  765]]
+Confusion Matrix - point
+[[92.7  1.9  3.6  1.1  0.7]
+ [20.4 61.3 18.   0.3  0. ]
+ [22.2  2.2 61.2 14.1  0.3]
+ [10.2  1.9 21.5 66.4  0. ]
+ [ 2.4  0.2  0.   7.3 90.1]]
+N_trajectory: 1805
+N_tripleg_true: 2248
+N_tripleg_pred: 2633
+mae_transfer: 0.936388
+************ 180 ************
+calculating x and y...done.
+--point--
+acc:	**66.87%**   f1-score:	**66.78%** 
+ [[3109   50  127   43   28]
+ [1100 3021 1040   22    0]
+ [1692  209 4472 1100   28]
+ [  86   39  120  481    3]
+ [  13    0    2   53  532]]
+Confusion Matrix - point
+[[92.6  1.5  3.8  1.3  0.8]
+ [21.2 58.3 20.1  0.4  0. ]
+ [22.6  2.8 59.6 14.7  0.4]
+ [11.8  5.3 16.5 66.   0.4]
+ [ 2.2  0.   0.3  8.8 88.7]]
+N_trajectory: 1695
+N_tripleg_true: 2131
+N_tripleg_pred: 2493
+mae_transfer: 0.975129
+************ 240 ************
+calculating x and y...done.
+--point--
+acc:	**64.51%**   f1-score:	**64.87%** 
+ [[2391   56   92   48   33]
+ [ 970 2173  859   30    0]
+ [1328  206 3324  887   11]
+ [  81   29   76  381    9]
+ [  13    0    2   39  401]]
+Confusion Matrix - point
+[[91.3  2.1  3.5  1.8  1.3]
+ [24.1 53.9 21.3  0.7  0. ]
+ [23.1  3.6 57.7 15.4  0.2]
+ [14.1  5.  13.2 66.1  1.6]
+ [ 2.9  0.   0.4  8.6 88.1]]
+N_trajectory: 1587
+N_tripleg_true: 2016
+N_tripleg_pred: 2372
+mae_transfer: 1.026786
+************ 300 ************
+calculating x and y...done.
+--point--
+acc:	**64.05%**   f1-score:	**65.19%** 
+ [[1962   51  105   27   21]
+ [ 831 1734  711   14    0]
+ [1120  213 2680  672   13]
+ [  52   24   43  343    2]
+ [  19    4    2   31  326]]
+Confusion Matrix - point
+[[90.6  2.4  4.8  1.2  1. ]
+ [25.3 52.7 21.6  0.4  0. ]
+ [23.8  4.5 57.  14.3  0.3]
+ [11.2  5.2  9.3 73.9  0.4]
+ [ 5.   1.   0.5  8.1 85.3]]
+N_trajectory: 1513
+N_tripleg_true: 1936
+N_tripleg_pred: 2260
+mae_transfer: 1.021694
+------- [usersplit / Fold 1] -------
+dropout points...remain 14.22% (430924/3031198), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 0]: [Loss = 1.04953635], lr = 0.000500, Elapsed: 9.15 s
+dropout points...remain 14.38% (435966/3031198), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 1]: [Loss = 0.90722603], lr = 0.001000, Elapsed: 18.49 s
+dropout points...remain 15.44% (468056/3031198), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 2]: [Loss = 0.84916080], lr = 0.000841, Elapsed: 27.93 s
+dropout points...remain 15.22% (461331/3031198), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 3]: [Loss = 0.81959320], lr = 0.000707, Elapsed: 37.59 s
+dropout points...remain 15.19% (460503/3031198), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 4]: [Loss = 0.77643516], lr = 0.000595, Elapsed: 46.90 s
+dropout points...remain 13.85% (419693/3031198), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 5]: [Loss = 0.74504744], lr = 0.000500, Elapsed: 56.18 s
+dropout points...remain 14.64% (443826/3031198), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 6]: [Loss = 0.72709774], lr = 0.000420, Elapsed: 65.22 s
+dropout points...remain 14.15% (429064/3031198), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 7]: [Loss = 0.71022983], lr = 0.000354, Elapsed: 74.86 s
+dropout points...remain 14.07% (426410/3031198), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 8]: [Loss = 0.68885065], lr = 0.000297, Elapsed: 84.06 s
+dropout points...remain 14.74% (446690/3031198), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 9]: [Loss = 0.67897153], lr = 0.000250, Elapsed: 93.73 s
+dropout points...remain 14.72% (446226/3031198), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 10]: [Loss = 0.66690558], lr = 0.000210, Elapsed: 102.97 s
+dropout points...remain 14.84% (449749/3031198), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 11]: [Loss = 0.66720897], lr = 0.000177, Elapsed: 112.62 s
+dropout points...remain 14.26% (432189/3031198), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 12]: [Loss = 0.64622473], lr = 0.000149, Elapsed: 121.66 s
+dropout points...remain 14.38% (436014/3031198), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 13]: [Loss = 0.64715167], lr = 0.000125, Elapsed: 132.09 s
+dropout points...remain 15.10% (457682/3031198), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 14]: [Loss = 0.64282382], lr = 0.000105, Elapsed: 141.78 s
+dropout points...remain 14.28% (432982/3031198), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 15]: [Loss = 0.79698167], lr = 0.000500, Elapsed: 153.82 s
+dropout points...remain 14.63% (443564/3031198), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 16]: [Loss = 0.62501651], lr = 0.001000, Elapsed: 165.42 s
+dropout points...remain 14.46% (438250/3031198), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 17]: [Loss = 0.51591087], lr = 0.000841, Elapsed: 177.28 s
+dropout points...remain 14.88% (450960/3031198), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 18]: [Loss = 0.48569222], lr = 0.000707, Elapsed: 189.74 s
+dropout points...remain 14.74% (446768/3031198), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 19]: [Loss = 0.43487491], lr = 0.000595, Elapsed: 201.84 s
+dropout points...remain 14.41% (436675/3031198), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 20]: [Loss = 0.42501812], lr = 0.000500, Elapsed: 213.18 s
+dropout points...remain 14.36% (435135/3031198), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 21]: [Loss = 0.39140166], lr = 0.000420, Elapsed: 225.00 s
+dropout points...remain 14.12% (428115/3031198), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 22]: [Loss = 0.37190003], lr = 0.000354, Elapsed: 236.29 s
+dropout points...remain 14.91% (452091/3031198), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 23]: [Loss = 0.35478367], lr = 0.000297, Elapsed: 248.20 s
+dropout points...remain 14.39% (436213/3031198), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 24]: [Loss = 0.34987156], lr = 0.000250, Elapsed: 259.47 s
+dropout points...remain 14.29% (433150/3031198), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 25]: [Loss = 0.35095294], lr = 0.000210, Elapsed: 271.50 s
+dropout points...remain 13.84% (419540/3031198), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 26]: [Loss = 0.34160340], lr = 0.000177, Elapsed: 283.38 s
+dropout points...remain 14.31% (433754/3031198), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 27]: [Loss = 0.32031517], lr = 0.000149, Elapsed: 295.47 s
+dropout points...remain 14.07% (426408/3031198), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 28]: [Loss = 0.31457941], lr = 0.000125, Elapsed: 306.82 s
+dropout points...remain 14.58% (441852/3031198), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 29]: [Loss = 0.31285306], lr = 0.000105, Elapsed: 318.63 s
+************ 5 ************
+calculating x and y...done.
+--point--
+acc:	**83.25%**   f1-score:	**74.66%** 
+ [[142016   2398  19736   1936   2106]
+ [  3625   6422   1114      0      5]
+ [  9539   1131 142367   4153   1439]
+ [  4960    588  13238  12761    321]
+ [   873      4     63     88  30991]]
+Confusion Matrix - point
+[[84.4  1.4 11.7  1.2  1.3]
+ [32.5 57.5 10.   0.   0. ]
+ [ 6.   0.7 89.7  2.6  0.9]
+ [15.6  1.8 41.5 40.   1. ]
+ [ 2.7  0.   0.2  0.3 96.8]]
+N_trajectory: 1670
+N_tripleg_true: 2663
+N_tripleg_pred: 2434
+mae_transfer: 0.543372
+************ 10 ************
+calculating x and y...done.
+--point--
+acc:	**84.25%**   f1-score:	**76.91%** 
+ [[75512  1459  8748   561  1219]
+ [ 1510  3844   541     0     3]
+ [ 5305   715 71312  2500   726]
+ [ 2627   293  5736  7663   164]
+ [  422     0     6    31 15875]]
+Confusion Matrix - point
+[[86.3  1.7 10.   0.6  1.4]
+ [25.6 65.2  9.2  0.   0.1]
+ [ 6.6  0.9 88.5  3.1  0.9]
+ [15.9  1.8 34.8 46.5  1. ]
+ [ 2.6  0.   0.   0.2 97.2]]
+N_trajectory: 1667
+N_tripleg_true: 2656
+N_tripleg_pred: 2446
+mae_transfer: 0.526355
+************ 15 ************
+calculating x and y...done.
+--point--
+acc:	**84.63%**   f1-score:	**77.69%** 
+ [[52412  1014  5656   418   805]
+ [ 1096  2690   300     0     2]
+ [ 3704   465 47931  1850   491]
+ [ 1767   222  3481  5670   116]
+ [  294     0     3    17 10780]]
+Confusion Matrix - point
+[[86.9  1.7  9.4  0.7  1.3]
+ [26.8 65.8  7.3  0.   0. ]
+ [ 6.8  0.9 88.   3.4  0.9]
+ [15.7  2.  30.9 50.4  1. ]
+ [ 2.7  0.   0.   0.2 97.2]]
+N_trajectory: 1659
+N_tripleg_true: 2646
+N_tripleg_pred: 2466
+mae_transfer: 0.528345
+************ 30 ************
+calculating x and y...done.
+--point--
+acc:	**85.35%**   f1-score:	**79.16%** 
+ [[28264   479  2803   266   410]
+ [  589  1413   177     0     1]
+ [ 2038   262 24550  1016   259]
+ [  872   125  1341  3533    65]
+ [  167     0     4     8  5618]]
+Confusion Matrix - point
+[[87.7  1.5  8.7  0.8  1.3]
+ [27.  64.8  8.1  0.   0. ]
+ [ 7.2  0.9 87.3  3.6  0.9]
+ [14.7  2.1 22.6 59.5  1.1]
+ [ 2.9  0.   0.1  0.1 96.9]]
+N_trajectory: 1648
+N_tripleg_true: 2629
+N_tripleg_pred: 2468
+mae_transfer: 0.525295
+************ 60 ************
+calculating x and y...done.
+--point--
+acc:	**85.54%**   f1-score:	**79.38%** 
+ [[15604   275  1410   121   188]
+ [  278   813    95     0     2]
+ [ 1121   222 12722   586   146]
+ [  487    93   599  1952    35]
+ [   96     0     9     5  3023]]
+Confusion Matrix - point
+[[88.7  1.6  8.   0.7  1.1]
+ [23.4 68.4  8.   0.   0.2]
+ [ 7.6  1.5 86.   4.   1. ]
+ [15.4  2.9 18.9 61.7  1.1]
+ [ 3.1  0.   0.3  0.2 96.5]]
+N_trajectory: 1607
+N_tripleg_true: 2577
+N_tripleg_pred: 2435
+mae_transfer: 0.520761
+************ 120 ************
+calculating x and y...done.
+--point--
+acc:	**81.85%**   f1-score:	**73.05%** 
+ [[8408  209  906  107  179]
+ [ 239  369   58    0    3]
+ [ 627  362 6383  453   79]
+ [ 227   87  319 1041   24]
+ [  47    2   12   11 1620]]
+Confusion Matrix - point
+[[85.7  2.1  9.2  1.1  1.8]
+ [35.7 55.2  8.7  0.   0.4]
+ [ 7.9  4.6 80.8  5.7  1. ]
+ [13.4  5.1 18.8 61.3  1.4]
+ [ 2.8  0.1  0.7  0.7 95.7]]
+N_trajectory: 1482
+N_tripleg_true: 2436
+N_tripleg_pred: 2197
+mae_transfer: 0.566913
+************ 180 ************
+calculating x and y...done.
+--point--
+acc:	**80.93%**   f1-score:	**71.69%** 
+ [[5897  203  641   81  132]
+ [ 169  245   47    5    0]
+ [ 460  298 4346  330   57]
+ [ 158   72  171  757   17]
+ [  47    7    7   12 1125]]
+Confusion Matrix - point
+[[84.8  2.9  9.2  1.2  1.9]
+ [36.3 52.6 10.1  1.1  0. ]
+ [ 8.4  5.4 79.1  6.   1. ]
+ [13.4  6.1 14.6 64.4  1.4]
+ [ 3.9  0.6  0.6  1.  93.9]]
+N_trajectory: 1387
+N_tripleg_true: 2299
+N_tripleg_pred: 2057
+mae_transfer: 0.598521
+************ 240 ************
+calculating x and y...done.
+--point--
+acc:	**79.09%**   f1-score:	**69.33%** 
+ [[4581  138  564   71  129]
+ [ 145  181   42    0    1]
+ [ 371  324 3237  251   45]
+ [ 110   64  165  540   13]
+ [  34    1    7    8  854]]
+Confusion Matrix - point
+[[83.5  2.5 10.3  1.3  2.4]
+ [39.3 49.1 11.4  0.   0.3]
+ [ 8.8  7.7 76.6  5.9  1.1]
+ [12.3  7.2 18.5 60.5  1.5]
+ [ 3.8  0.1  0.8  0.9 94.5]]
+N_trajectory: 1310
+N_tripleg_true: 2195
+N_tripleg_pred: 1920
+mae_transfer: 0.615490
+************ 300 ************
+calculating x and y...done.
+--point--
+acc:	**76.85%**   f1-score:	**67.16%** 
+ [[3670  184  438   60  138]
+ [ 141  142   30    2    2]
+ [ 312  374 2502  223   42]
+ [ 122   33   92  478   13]
+ [  28    4    6   10  692]]
+Confusion Matrix - point
+[[81.7  4.1  9.8  1.3  3.1]
+ [44.5 44.8  9.5  0.6  0.6]
+ [ 9.  10.8 72.5  6.5  1.2]
+ [16.5  4.5 12.5 64.8  1.8]
+ [ 3.8  0.5  0.8  1.4 93.5]]
+N_trajectory: 1228
+N_tripleg_true: 2085
+N_tripleg_pred: 1814
+mae_transfer: 0.655635
+------- [usersplit / Fold 2] -------
+dropout points...remain 14.73% (455387/3090680), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 0]: [Loss = 1.03333098], lr = 0.000500, Elapsed: 9.49 s
+dropout points...remain 15.19% (469430/3090680), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 1]: [Loss = 0.90666381], lr = 0.001000, Elapsed: 19.63 s
+dropout points...remain 16.74% (517254/3090680), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 2]: [Loss = 0.85710529], lr = 0.000841, Elapsed: 29.67 s
+dropout points...remain 15.01% (463816/3090680), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 3]: [Loss = 0.79813093], lr = 0.000707, Elapsed: 40.07 s
+dropout points...remain 15.41% (476147/3090680), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 4]: [Loss = 0.75202200], lr = 0.000595, Elapsed: 49.79 s
+dropout points...remain 14.73% (455373/3090680), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 5]: [Loss = 0.75103389], lr = 0.000500, Elapsed: 60.04 s
+dropout points...remain 15.05% (464993/3090680), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 6]: [Loss = 0.72195721], lr = 0.000420, Elapsed: 69.91 s
+dropout points...remain 15.22% (470424/3090680), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 7]: [Loss = 0.70869688], lr = 0.000354, Elapsed: 80.52 s
+dropout points...remain 15.12% (467426/3090680), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 8]: [Loss = 0.70650078], lr = 0.000297, Elapsed: 90.30 s
+dropout points...remain 16.42% (507342/3090680), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 9]: [Loss = 0.68592499], lr = 0.000250, Elapsed: 100.95 s
+dropout points...remain 16.32% (504412/3090680), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 10]: [Loss = 0.67845234], lr = 0.000210, Elapsed: 111.47 s
+dropout points...remain 15.63% (482969/3090680), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 11]: [Loss = 0.65698542], lr = 0.000177, Elapsed: 121.94 s
+dropout points...remain 15.03% (464379/3090680), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 12]: [Loss = 0.66336058], lr = 0.000149, Elapsed: 131.99 s
+dropout points...remain 15.10% (466619/3090680), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 13]: [Loss = 0.66106785], lr = 0.000125, Elapsed: 142.72 s
+dropout points...remain 14.70% (454353/3090680), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 14]: [Loss = 0.65802319], lr = 0.000105, Elapsed: 152.97 s
+dropout points...remain 14.88% (459762/3090680), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 15]: [Loss = 0.78115959], lr = 0.000500, Elapsed: 166.66 s
+dropout points...remain 14.55% (449618/3090680), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 16]: [Loss = 0.63703505], lr = 0.001000, Elapsed: 178.42 s
+dropout points...remain 14.96% (462341/3090680), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 17]: [Loss = 0.54677335], lr = 0.000841, Elapsed: 191.08 s
+dropout points...remain 14.79% (457136/3090680), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 18]: [Loss = 0.47950280], lr = 0.000707, Elapsed: 203.30 s
+dropout points...remain 15.23% (470687/3090680), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 19]: [Loss = 0.44335320], lr = 0.000595, Elapsed: 215.79 s
+dropout points...remain 14.94% (461673/3090680), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 20]: [Loss = 0.41462062], lr = 0.000500, Elapsed: 227.70 s
+dropout points...remain 14.28% (441237/3090680), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 21]: [Loss = 0.39636282], lr = 0.000420, Elapsed: 239.89 s
+dropout points...remain 14.61% (451417/3090680), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 22]: [Loss = 0.37771644], lr = 0.000354, Elapsed: 251.75 s
+dropout points...remain 14.73% (455191/3090680), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 23]: [Loss = 0.37926445], lr = 0.000297, Elapsed: 264.00 s
+dropout points...remain 14.15% (437282/3090680), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 24]: [Loss = 0.35941834], lr = 0.000250, Elapsed: 275.99 s
+dropout points...remain 15.05% (465220/3090680), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 25]: [Loss = 0.34321288], lr = 0.000210, Elapsed: 288.44 s
+dropout points...remain 15.15% (468132/3090680), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 26]: [Loss = 0.34143870], lr = 0.000177, Elapsed: 300.67 s
+dropout points...remain 14.81% (457777/3090680), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 27]: [Loss = 0.33466552], lr = 0.000149, Elapsed: 313.09 s
+dropout points...remain 15.17% (468906/3090680), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 28]: [Loss = 0.32797222], lr = 0.000125, Elapsed: 325.16 s
+dropout points...remain 14.68% (453683/3090680), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 29]: [Loss = 0.32655845], lr = 0.000105, Elapsed: 337.64 s
+************ 5 ************
+calculating x and y...done.
+--point--
+acc:	**85.41%**   f1-score:	**87.29%** 
+ [[79328  7686  7170  3021   118]
+ [ 5728 72506  1134   849     0]
+ [ 3705  1921 50356  6680   121]
+ [  783   123  6827 58578    39]
+ [   74     7   112    14  9130]]
+Confusion Matrix - point
+[[81.5  7.9  7.4  3.1  0.1]
+ [ 7.1 90.4  1.4  1.1  0. ]
+ [ 5.9  3.1 80.2 10.6  0.2]
+ [ 1.2  0.2 10.3 88.3  0.1]
+ [ 0.8  0.1  1.2  0.1 97.8]]
+N_trajectory: 1276
+N_tripleg_true: 1891
+N_tripleg_pred: 1634
+mae_transfer: 0.506081
+************ 10 ************
+calculating x and y...done.
+--point--
+acc:	**85.34%**   f1-score:	**87.09%** 
+ [[41196  4103  3094  1391    76]
+ [ 2810 37998   604   368     0]
+ [ 2120  1211 24928  3568    63]
+ [  442   112  3856 30567    23]
+ [   34     4    63     0  4644]]
+Confusion Matrix - point
+[[82.6  8.2  6.2  2.8  0.2]
+ [ 6.7 90.9  1.4  0.9  0. ]
+ [ 6.6  3.8 78.2 11.2  0.2]
+ [ 1.3  0.3 11.  87.3  0.1]
+ [ 0.7  0.1  1.3  0.  97.9]]
+N_trajectory: 1275
+N_tripleg_true: 1890
+N_tripleg_pred: 1643
+mae_transfer: 0.492593
+************ 15 ************
+calculating x and y...done.
+--point--
+acc:	**85.69%**   f1-score:	**87.37%** 
+ [[28117  2960  1960   893    55]
+ [ 1817 26169   477   186     0]
+ [ 1480   849 16851  2305    43]
+ [  326    81  2452 21311    13]
+ [   29     2    41     0  3141]]
+Confusion Matrix - point
+[[82.7  8.7  5.8  2.6  0.2]
+ [ 6.3 91.3  1.7  0.6  0. ]
+ [ 6.9  3.9 78.3 10.7  0.2]
+ [ 1.3  0.3 10.1 88.1  0.1]
+ [ 0.9  0.1  1.3  0.  97.8]]
+N_trajectory: 1274
+N_tripleg_true: 1889
+N_tripleg_pred: 1651
+mae_transfer: 0.485971
+************ 30 ************
+calculating x and y...done.
+--point--
+acc:	**85.92%**   f1-score:	**87.44%** 
+ [[14949  1417  1049   530    26]
+ [  980 13850   273   121     0]
+ [  770   426  8584  1307    23]
+ [  197    43  1081 11646    12]
+ [   20     7    19     0  1618]]
+Confusion Matrix - point
+[[83.2  7.9  5.8  2.9  0.1]
+ [ 6.4 91.   1.8  0.8  0. ]
+ [ 6.9  3.8 77.3 11.8  0.2]
+ [ 1.5  0.3  8.3 89.7  0.1]
+ [ 1.2  0.4  1.1  0.  97.2]]
+N_trajectory: 1267
+N_tripleg_true: 1880
+N_tripleg_pred: 1661
+mae_transfer: 0.492021
+************ 60 ************
+calculating x and y...done.
+--point--
+acc:	**84.52%**   f1-score:	**86.20%** 
+ [[8028  868  654  295   12]
+ [ 517 7397  251   76    0]
+ [ 448  255 4323  781   12]
+ [ 119   20  598 6329    6]
+ [  12    0    0   10  860]]
+Confusion Matrix - point
+[[81.4  8.8  6.6  3.   0.1]
+ [ 6.3 89.8  3.   0.9  0. ]
+ [ 7.7  4.4 74.3 13.4  0.2]
+ [ 1.7  0.3  8.5 89.5  0.1]
+ [ 1.4  0.   0.   1.1 97.5]]
+N_trajectory: 1253
+N_tripleg_true: 1858
+N_tripleg_pred: 1618
+mae_transfer: 0.515608
+************ 120 ************
+calculating x and y...done.
+--point--
+acc:	**83.02%**   f1-score:	**85.03%** 
+ [[4463  420  443  203    7]
+ [ 370 3788  303   54    0]
+ [ 252  175 2303  358    9]
+ [  95   58  204 3466    1]
+ [   9    1    0    0  457]]
+Confusion Matrix - point
+[[80.6  7.6  8.   3.7  0.1]
+ [ 8.2 83.9  6.7  1.2  0. ]
+ [ 8.1  5.7 74.4 11.6  0.3]
+ [ 2.5  1.5  5.3 90.6  0. ]
+ [ 1.9  0.2  0.   0.  97.9]]
+N_trajectory: 1190
+N_tripleg_true: 1769
+N_tripleg_pred: 1514
+mae_transfer: 0.537592
+************ 180 ************
+calculating x and y...done.
+--point--
+acc:	**80.56%**   f1-score:	**82.79%** 
+ [[3131  313  332  200    7]
+ [ 315 2486  308   43    0]
+ [ 175  121 1557  293    4]
+ [  89   63  107 2396    2]
+ [  10    0    0    3  311]]
+Confusion Matrix - point
+[[78.6  7.9  8.3  5.   0.2]
+ [10.  78.9  9.8  1.4  0. ]
+ [ 8.1  5.6 72.4 13.6  0.2]
+ [ 3.3  2.4  4.  90.2  0.1]
+ [ 3.1  0.   0.   0.9 96. ]]
+N_trajectory: 1129
+N_tripleg_true: 1691
+N_tripleg_pred: 1452
+mae_transfer: 0.583678
+************ 240 ************
+calculating x and y...done.
+--point--
+acc:	**80.20%**   f1-score:	**82.27%** 
+ [[2522  169  283  123   11]
+ [ 318 1765  324   43    0]
+ [ 159   71 1224  194    7]
+ [  50   44   81 1878    1]
+ [   6    1    0    0  244]]
+Confusion Matrix - point
+[[81.1  5.4  9.1  4.   0.4]
+ [13.  72.  13.2  1.8  0. ]
+ [ 9.6  4.3 74.  11.7  0.4]
+ [ 2.4  2.1  3.9 91.4  0. ]
+ [ 2.4  0.4  0.   0.  97.2]]
+N_trajectory: 1070
+N_tripleg_true: 1612
+N_tripleg_pred: 1386
+mae_transfer: 0.612903
+************ 300 ************
+calculating x and y...done.
+--point--
+acc:	**77.53%**   f1-score:	**80.05%** 
+ [[2090  151  277   96    8]
+ [ 279 1328  331   48    0]
+ [ 145   63  969  175    3]
+ [  59   45   78 1505    1]
+ [   5    1    1    0  200]]
+Confusion Matrix - point
+[[79.7  5.8 10.6  3.7  0.3]
+ [14.  66.9 16.7  2.4  0. ]
+ [10.7  4.6 71.5 12.9  0.2]
+ [ 3.5  2.7  4.6 89.2  0.1]
+ [ 2.4  0.5  0.5  0.  96.6]]
+N_trajectory: 1019
+N_tripleg_true: 1548
+N_tripleg_pred: 1359
+mae_transfer: 0.667313
+------- [usersplit / Fold 3] -------
+dropout points...remain 13.43% (433584/3227288), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 0]: [Loss = 0.99047514], lr = 0.000500, Elapsed: 9.09 s
+dropout points...remain 14.28% (460714/3227288), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 1]: [Loss = 0.86130673], lr = 0.001000, Elapsed: 18.73 s
+dropout points...remain 15.50% (500089/3227288), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 2]: [Loss = 0.79707818], lr = 0.000841, Elapsed: 28.11 s
+dropout points...remain 14.58% (470465/3227288), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 3]: [Loss = 0.75512651], lr = 0.000707, Elapsed: 37.98 s
+dropout points...remain 13.80% (445484/3227288), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 4]: [Loss = 0.73627429], lr = 0.000595, Elapsed: 47.04 s
+dropout points...remain 14.54% (469238/3227288), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 5]: [Loss = 0.71491625], lr = 0.000500, Elapsed: 56.82 s
+dropout points...remain 14.22% (458935/3227288), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 6]: [Loss = 0.70246556], lr = 0.000420, Elapsed: 66.01 s
+dropout points...remain 14.35% (463261/3227288), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 7]: [Loss = 0.67263974], lr = 0.000354, Elapsed: 76.13 s
+dropout points...remain 14.33% (462422/3227288), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 8]: [Loss = 0.67228275], lr = 0.000297, Elapsed: 85.42 s
+dropout points...remain 15.52% (500768/3227288), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 9]: [Loss = 0.65517679], lr = 0.000250, Elapsed: 95.55 s
+dropout points...remain 14.56% (469826/3227288), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 10]: [Loss = 0.65035192], lr = 0.000210, Elapsed: 104.90 s
+dropout points...remain 14.16% (457081/3227288), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 11]: [Loss = 0.63625337], lr = 0.000177, Elapsed: 114.79 s
+dropout points...remain 14.12% (455723/3227288), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 12]: [Loss = 0.63691934], lr = 0.000149, Elapsed: 124.23 s
+dropout points...remain 14.09% (454650/3227288), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 13]: [Loss = 0.64198223], lr = 0.000125, Elapsed: 133.93 s
+dropout points...remain 14.25% (460024/3227288), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 14]: [Loss = 0.61959178], lr = 0.000105, Elapsed: 143.24 s
+dropout points...remain 14.23% (459131/3227288), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 15]: [Loss = 0.76305195], lr = 0.000500, Elapsed: 155.36 s
+dropout points...remain 14.48% (467370/3227288), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 16]: [Loss = 0.63651039], lr = 0.001000, Elapsed: 167.20 s
+dropout points...remain 14.34% (462702/3227288), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 17]: [Loss = 0.53127399], lr = 0.000841, Elapsed: 179.32 s
+dropout points...remain 14.33% (462378/3227288), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 18]: [Loss = 0.50199843], lr = 0.000707, Elapsed: 190.82 s
+dropout points...remain 13.96% (450621/3227288), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 19]: [Loss = 0.44954091], lr = 0.000595, Elapsed: 202.75 s
+dropout points...remain 14.21% (458749/3227288), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 20]: [Loss = 0.44258572], lr = 0.000500, Elapsed: 214.33 s
+dropout points...remain 13.58% (438226/3227288), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 21]: [Loss = 0.41057246], lr = 0.000420, Elapsed: 226.01 s
+dropout points...remain 13.95% (450313/3227288), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 22]: [Loss = 0.38839478], lr = 0.000354, Elapsed: 237.32 s
+dropout points...remain 14.04% (453209/3227288), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 23]: [Loss = 0.38224561], lr = 0.000297, Elapsed: 249.01 s
+dropout points...remain 13.62% (439689/3227288), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 24]: [Loss = 0.38414152], lr = 0.000250, Elapsed: 260.55 s
+dropout points...remain 13.92% (449319/3227288), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 25]: [Loss = 0.36654231], lr = 0.000210, Elapsed: 272.57 s
+dropout points...remain 14.36% (463317/3227288), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 26]: [Loss = 0.36302535], lr = 0.000177, Elapsed: 284.44 s
+dropout points...remain 13.75% (443671/3227288), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 27]: [Loss = 0.35664014], lr = 0.000149, Elapsed: 296.46 s
+dropout points...remain 13.75% (443867/3227288), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 28]: [Loss = 0.33948977], lr = 0.000125, Elapsed: 308.37 s
+dropout points...remain 14.20% (458357/3227288), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 29]: [Loss = 0.34435421], lr = 0.000105, Elapsed: 320.35 s
+************ 5 ************
+calculating x and y...done.
+--point--
+acc:	**92.02%**   f1-score:	**85.17%** 
+ [[ 74652    718   1729   2002    479]
+ [  1654  40533    330    416      1]
+ [  1468     13   5170   2892     29]
+ [  8858     68   4346 153871    373]
+ [   535      2     57     11  25537]]
+Confusion Matrix - point
+[[93.8  0.9  2.2  2.5  0.6]
+ [ 3.9 94.4  0.8  1.   0. ]
+ [15.3  0.1 54.  30.2  0.3]
+ [ 5.3  0.   2.6 91.9  0.2]
+ [ 2.   0.   0.2  0.  97.7]]
+N_trajectory: 1547
+N_tripleg_true: 1920
+N_tripleg_pred: 2007
+mae_transfer: 0.388021
+************ 10 ************
+calculating x and y...done.
+--point--
+acc:	**92.23%**   f1-score:	**85.30%** 
+ [[40262   559   859  1133   262]
+ [  710 24569   281   355     1]
+ [  789    20  3053  1795    22]
+ [ 5136    81  2420 94880   187]
+ [  297    15    50    11 15145]]
+Confusion Matrix - point
+[[93.5  1.3  2.   2.6  0.6]
+ [ 2.7 94.8  1.1  1.4  0. ]
+ [13.9  0.4 53.8 31.6  0.4]
+ [ 5.   0.1  2.4 92.4  0.2]
+ [ 1.9  0.1  0.3  0.1 97.6]]
+N_trajectory: 1546
+N_tripleg_true: 1918
+N_tripleg_pred: 2009
+mae_transfer: 0.391554
+************ 15 ************
+calculating x and y...done.
+--point--
+acc:	**91.85%**   f1-score:	**85.16%** 
+ [[28425   420   569   913   185]
+ [  502 17675   193   248     1]
+ [  515    60  2253  1290    16]
+ [ 3706   110  1865 65264   125]
+ [  222    12    38    13 10456]]
+Confusion Matrix - point
+[[93.2  1.4  1.9  3.   0.6]
+ [ 2.7 94.9  1.   1.3  0. ]
+ [12.5  1.5 54.5 31.2  0.4]
+ [ 5.2  0.2  2.6 91.8  0.2]
+ [ 2.1  0.1  0.4  0.1 97.3]]
+N_trajectory: 1545
+N_tripleg_true: 1918
+N_tripleg_pred: 2005
+mae_transfer: 0.388425
+************ 30 ************
+calculating x and y...done.
+--point--
+acc:	**90.76%**   f1-score:	**84.21%** 
+ [[15906   216   296   502   111]
+ [  354  9557    78   265     1]
+ [  309     7  1288   807     7]
+ [ 2264    53  1271 34394    68]
+ [  140     5    28    16  5615]]
+Confusion Matrix - point
+[[93.4  1.3  1.7  2.9  0.7]
+ [ 3.5 93.2  0.8  2.6  0. ]
+ [12.8  0.3 53.3 33.4  0.3]
+ [ 6.   0.1  3.3 90.4  0.2]
+ [ 2.4  0.1  0.5  0.3 96.7]]
+N_trajectory: 1535
+N_tripleg_true: 1906
+N_tripleg_pred: 2037
+mae_transfer: 0.411857
+************ 60 ************
+calculating x and y...done.
+--point--
+acc:	**88.39%**   f1-score:	**81.85%** 
+ [[ 8808   113   150   250    65]
+ [  222  5082    71   225     0]
+ [  190     0   743   468     8]
+ [ 1498    22  1190 17694    53]
+ [   93     3    12    18  3066]]
+Confusion Matrix - point
+[[93.8  1.2  1.6  2.7  0.7]
+ [ 4.  90.8  1.3  4.   0. ]
+ [13.5  0.  52.7 33.2  0.6]
+ [ 7.3  0.1  5.8 86.5  0.3]
+ [ 2.9  0.1  0.4  0.6 96.1]]
+N_trajectory: 1510
+N_tripleg_true: 1879
+N_tripleg_pred: 2040
+mae_transfer: 0.470995
+************ 120 ************
+calculating x and y...done.
+--point--
+acc:	**86.57%**   f1-score:	**79.40%** 
+ [[4728   91  102  192   54]
+ [ 116 2620  160  116    0]
+ [ 119    3  382  280    9]
+ [ 816   33  704 9352   39]
+ [  61    0    8    4 1663]]
+Confusion Matrix - point
+[[91.5  1.8  2.   3.7  1. ]
+ [ 3.9 87.   5.3  3.9  0. ]
+ [15.   0.4 48.2 35.3  1.1]
+ [ 7.5  0.3  6.4 85.5  0.4]
+ [ 3.5  0.   0.5  0.2 95.8]]
+N_trajectory: 1411
+N_tripleg_true: 1776
+N_tripleg_pred: 1883
+mae_transfer: 0.455518
+************ 180 ************
+calculating x and y...done.
+--point--
+acc:	**84.70%**   f1-score:	**77.41%** 
+ [[3262   69   92  170   52]
+ [  88 1686  219   93    0]
+ [  90    3  273  184    8]
+ [ 634   31  493 6409   37]
+ [  47    0    4    3 1199]]
+Confusion Matrix - point
+[[89.5  1.9  2.5  4.7  1.4]
+ [ 4.2 80.8 10.5  4.5  0. ]
+ [16.1  0.5 48.9 33.   1.4]
+ [ 8.3  0.4  6.5 84.3  0.5]
+ [ 3.8  0.   0.3  0.2 95.7]]
+N_trajectory: 1339
+N_tripleg_true: 1700
+N_tripleg_pred: 1819
+mae_transfer: 0.510000
+************ 240 ************
+calculating x and y...done.
+--point--
+acc:	**81.02%**   f1-score:	**72.88%** 
+ [[2488   49   84  157   58]
+ [ 105 1092  269  131    0]
+ [  84   10  179  157    2]
+ [ 501   51  483 4811   30]
+ [  30    3    6    1  871]]
+Confusion Matrix - point
+[[87.7  1.7  3.   5.5  2. ]
+ [ 6.6 68.4 16.8  8.2  0. ]
+ [19.4  2.3 41.4 36.3  0.5]
+ [ 8.5  0.9  8.2 81.9  0.5]
+ [ 3.3  0.3  0.7  0.1 95.6]]
+N_trajectory: 1251
+N_tripleg_true: 1604
+N_tripleg_pred: 1672
+mae_transfer: 0.549875
+************ 300 ************
+calculating x and y...done.
+--point--
+acc:	**80.22%**   f1-score:	**71.78%** 
+ [[1988   49   72  135   53]
+ [ 105  784  225  176    0]
+ [  71    8  156  126    5]
+ [ 397   37  354 3950   22]
+ [  24    2    5    6  713]]
+Confusion Matrix - point
+[[86.5  2.1  3.1  5.9  2.3]
+ [ 8.1 60.8 17.4 13.6  0. ]
+ [19.4  2.2 42.6 34.4  1.4]
+ [ 8.3  0.8  7.4 83.   0.5]
+ [ 3.2  0.3  0.7  0.8 95.1]]
+N_trajectory: 1181
+N_tripleg_true: 1524
+N_tripleg_pred: 1579
+mae_transfer: 0.559711
+------- [usersplit / Fold 4] -------
+dropout points...remain 13.83% (451865/3267356), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 0]: [Loss = 1.00974685], lr = 0.000500, Elapsed: 9.69 s
+dropout points...remain 14.58% (476513/3267356), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 1]: [Loss = 0.88165287], lr = 0.001000, Elapsed: 19.89 s
+dropout points...remain 15.55% (507944/3267356), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 2]: [Loss = 0.82426382], lr = 0.000841, Elapsed: 30.06 s
+dropout points...remain 14.62% (477543/3267356), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 3]: [Loss = 0.76804793], lr = 0.000707, Elapsed: 40.73 s
+dropout points...remain 14.26% (465906/3267356), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 4]: [Loss = 0.73740943], lr = 0.000595, Elapsed: 50.47 s
+dropout points...remain 14.32% (467933/3267356), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 5]: [Loss = 0.71183863], lr = 0.000500, Elapsed: 61.04 s
+dropout points...remain 14.35% (469019/3267356), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 6]: [Loss = 0.70548253], lr = 0.000420, Elapsed: 70.88 s
+dropout points...remain 14.35% (468782/3267356), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 7]: [Loss = 0.68264737], lr = 0.000354, Elapsed: 81.60 s
+dropout points...remain 15.00% (489989/3267356), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 8]: [Loss = 0.66557333], lr = 0.000297, Elapsed: 91.48 s
+dropout points...remain 15.55% (507988/3267356), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 9]: [Loss = 0.66637145], lr = 0.000250, Elapsed: 102.47 s
+dropout points...remain 15.49% (506009/3267356), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 10]: [Loss = 0.64087643], lr = 0.000210, Elapsed: 112.67 s
+dropout points...remain 14.89% (486381/3267356), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 11]: [Loss = 0.63895938], lr = 0.000177, Elapsed: 123.61 s
+dropout points...remain 14.75% (482033/3267356), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 12]: [Loss = 0.63345637], lr = 0.000149, Elapsed: 133.72 s
+dropout points...remain 15.17% (495774/3267356), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 13]: [Loss = 0.62456509], lr = 0.000125, Elapsed: 145.04 s
+dropout points...remain 14.79% (483330/3267356), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 14]: [Loss = 0.61298255], lr = 0.000105, Elapsed: 155.30 s
+dropout points...remain 14.62% (477744/3267356), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 15]: [Loss = 0.74868970], lr = 0.000500, Elapsed: 168.54 s
+dropout points...remain 14.06% (459247/3267356), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 16]: [Loss = 0.61578614], lr = 0.001000, Elapsed: 180.83 s
+dropout points...remain 14.87% (485767/3267356), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 17]: [Loss = 0.51426241], lr = 0.000841, Elapsed: 194.00 s
+dropout points...remain 14.79% (483325/3267356), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 18]: [Loss = 0.44588887], lr = 0.000707, Elapsed: 206.81 s
+dropout points...remain 14.63% (478171/3267356), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 19]: [Loss = 0.42021616], lr = 0.000595, Elapsed: 219.41 s
+dropout points...remain 14.66% (478839/3267356), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 20]: [Loss = 0.39187788], lr = 0.000500, Elapsed: 231.68 s
+dropout points...remain 14.02% (458003/3267356), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 21]: [Loss = 0.37211805], lr = 0.000420, Elapsed: 244.71 s
+dropout points...remain 14.55% (475304/3267356), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 22]: [Loss = 0.36355330], lr = 0.000354, Elapsed: 256.89 s
+dropout points...remain 14.24% (465257/3267356), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 23]: [Loss = 0.35012797], lr = 0.000297, Elapsed: 269.59 s
+dropout points...remain 14.22% (464471/3267356), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 24]: [Loss = 0.34167372], lr = 0.000250, Elapsed: 281.77 s
+dropout points...remain 14.58% (476301/3267356), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 25]: [Loss = 0.33191018], lr = 0.000210, Elapsed: 294.49 s
+dropout points...remain 14.40% (470539/3267356), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 26]: [Loss = 0.32306765], lr = 0.000177, Elapsed: 307.14 s
+dropout points...remain 14.06% (459473/3267356), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 27]: [Loss = 0.32485228], lr = 0.000149, Elapsed: 320.17 s
+dropout points...remain 14.31% (467547/3267356), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 28]: [Loss = 0.30546566], lr = 0.000125, Elapsed: 333.11 s
+dropout points...remain 14.17% (463141/3267356), calculating x and y...finish!
+building training dataset (time window)...finish!
+[Epoch 29]: [Loss = 0.30303301], lr = 0.000105, Elapsed: 345.81 s
+************ 5 ************
+calculating x and y...done.
+--point--
+acc:	**81.99%**   f1-score:	**81.81%** 
+ [[109133   1793  13685   4840    129]
+ [  3619  12288   3170    621      0]
+ [  7227     68  72387   2231      5]
+ [  2270    297  10954  35794     92]
+ [   276      0      7      2   3943]]
+Confusion Matrix - point
+[[84.2  1.4 10.6  3.7  0.1]
+ [18.4 62.4 16.1  3.2  0. ]
+ [ 8.8  0.1 88.4  2.7  0. ]
+ [ 4.6  0.6 22.2 72.4  0.2]
+ [ 6.5  0.   0.2  0.  93.3]]
+N_trajectory: 1280
+N_tripleg_true: 2075
+N_tripleg_pred: 1865
+mae_transfer: 0.588916
+************ 10 ************
+calculating x and y...done.
+--point--
+acc:	**83.47%**   f1-score:	**83.73%** 
+ [[57874   677  5842  2623    78]
+ [ 1900  8150  1545   412     0]
+ [ 4312    61 36313  1263     7]
+ [ 1414   161  4201 20376    52]
+ [  148     0    10     2  2015]]
+Confusion Matrix - point
+[[86.3  1.   8.7  3.9  0.1]
+ [15.8 67.9 12.9  3.4  0. ]
+ [10.3  0.1 86.6  3.   0. ]
+ [ 5.4  0.6 16.  77.8  0.2]
+ [ 6.8  0.   0.5  0.1 92.6]]
+N_trajectory: 1278
+N_tripleg_true: 2072
+N_tripleg_pred: 1896
+mae_transfer: 0.570463
+************ 15 ************
+calculating x and y...done.
+--point--
+acc:	**83.37%**   f1-score:	**83.91%** 
+ [[39707   587  3884  1884    38]
+ [ 1337  6238  1007   256     0]
+ [ 2997    33 23902  1562     7]
+ [  975   109  2315 14772    45]
+ [  116     0     4     1  1374]]
+Confusion Matrix - point
+[[86.1  1.3  8.4  4.1  0.1]
+ [15.1 70.6 11.4  2.9  0. ]
+ [10.5  0.1 83.9  5.5  0. ]
+ [ 5.4  0.6 12.7 81.1  0.2]
+ [ 7.8  0.   0.3  0.1 91.9]]
+N_trajectory: 1276
+N_tripleg_true: 2069
+N_tripleg_pred: 1898
+mae_transfer: 0.553407
+************ 30 ************
+calculating x and y...done.
+--point--
+acc:	**82.42%**   f1-score:	**82.71%** 
+ [[21306   268  1943  1103    29]
+ [  751  3585   597   209     0]
+ [ 1616   104 11974  1171     4]
+ [  576    91  1169  8050    29]
+ [   71     0     2     1   723]]
+Confusion Matrix - point
+[[86.4  1.1  7.9  4.5  0.1]
+ [14.6 69.7 11.6  4.1  0. ]
+ [10.9  0.7 80.5  7.9  0. ]
+ [ 5.8  0.9 11.8 81.2  0.3]
+ [ 8.9  0.   0.3  0.1 90.7]]
+N_trajectory: 1266
+N_tripleg_true: 2056
+N_tripleg_pred: 1902
+mae_transfer: 0.575875
+************ 60 ************
+calculating x and y...done.
+--point--
+acc:	**80.05%**   f1-score:	**79.75%** 
+ [[11650   197   986   591    13]
+ [  418  1960   485    93     0]
+ [  911   117  6006   812     8]
+ [  338   126   844  4089    18]
+ [   46     0     2     0   393]]
+Confusion Matrix - point
+[[86.7  1.5  7.3  4.4  0.1]
+ [14.1 66.3 16.4  3.1  0. ]
+ [11.6  1.5 76.5 10.3  0.1]
+ [ 6.2  2.3 15.6 75.5  0.3]
+ [10.4  0.   0.5  0.  89.1]]
+N_trajectory: 1250
+N_tripleg_true: 2035
+N_tripleg_pred: 1880
+mae_transfer: 0.610811
+************ 120 ************
+calculating x and y...done.
+--point--
+acc:	**76.63%**   f1-score:	**75.33%** 
+ [[6267  192  567  385   14]
+ [ 258 1040  313   59    0]
+ [ 486  194 3012  500    5]
+ [ 177   41  614 2121   13]
+ [  32    0    5    0  199]]
+Confusion Matrix - point
+[[84.4  2.6  7.6  5.2  0.2]
+ [15.4 62.3 18.7  3.5  0. ]
+ [11.6  4.6 71.8 11.9  0.1]
+ [ 6.   1.4 20.7 71.5  0.4]
+ [13.6  0.   2.1  0.  84.3]]
+N_trajectory: 1160
+N_tripleg_true: 1927
+N_tripleg_pred: 1711
+mae_transfer: 0.676700
+************ 180 ************
+calculating x and y...done.
+--point--
+acc:	**74.95%**   f1-score:	**73.34%** 
+ [[4371  179  408  286    9]
+ [ 209  640  265   43    0]
+ [ 356  206 2035  327    3]
+ [ 169   61  351 1500    5]
+ [  21    0    5    0  141]]
+Confusion Matrix - point
+[[83.2  3.4  7.8  5.4  0.2]
+ [18.1 55.3 22.9  3.7  0. ]
+ [12.2  7.  69.5 11.2  0.1]
+ [ 8.1  2.9 16.8 71.9  0.2]
+ [12.6  0.   3.   0.  84.4]]
+N_trajectory: 1086
+N_tripleg_true: 1834
+N_tripleg_pred: 1638
+mae_transfer: 0.731734
+************ 240 ************
+calculating x and y...done.
+--point--
+acc:	**72.23%**   f1-score:	**69.15%** 
+ [[3317  197  350  222   14]
+ [ 153  515  185   30    3]
+ [ 254  239 1504  271    2]
+ [ 105   89  353 1078    8]
+ [  18    0    9    2   98]]
+Confusion Matrix - point
+[[80.9  4.8  8.5  5.4  0.3]
+ [17.3 58.1 20.9  3.4  0.3]
+ [11.2 10.5 66.3 11.9  0.1]
+ [ 6.4  5.5 21.6 66.   0.5]
+ [14.2  0.   7.1  1.6 77.2]]
+N_trajectory: 1025
+N_tripleg_true: 1745
+N_tripleg_pred: 1506
+mae_transfer: 0.759312
+************ 300 ************
+calculating x and y...done.
+--point--
+acc:	**69.80%**   f1-score:	**67.15%** 
+ [[2687  229  293  185    6]
+ [ 143  369  181   18    2]
+ [ 210  273 1157  237    2]
+ [ 120   68  249  894    6]
+ [  15    0    8    0   83]]
+Confusion Matrix - point
+[[79.   6.7  8.6  5.4  0.2]
+ [20.1 51.8 25.4  2.5  0.3]
+ [11.2 14.5 61.6 12.6  0.1]
+ [ 9.   5.1 18.6 66.9  0.4]
+ [14.2  0.   7.5  0.  78.3]]
+N_trajectory: 980
+N_tripleg_true: 1671
+N_tripleg_pred: 1420
+mae_transfer: 0.828845
+####################################################################################################
+**OVERALL** Validate with usersplit & gap_5
+--point--
+acc:	**83.85%**   f1-score:	**85.98%** 
+ [[473938  14163  43853  12545   3069]
+ [ 35784 250525  10022   1976     95]
+ [ 61460   6162 402555  35595   2169]
+ [ 17346   1364  36408 275726    830]
+ [  1914     21    253   1042  82838]]
+Confusion Matrix - point
+[[86.6  2.6  8.   2.3  0.6]
+ [12.  84.   3.4  0.7  0. ]
+ [12.1  1.2 79.3  7.   0.4]
+ [ 5.2  0.4 11.  83.1  0.3]
+ [ 2.2  0.   0.3  1.2 96.2]]
+--distance--
+acc:	**86.13%**   f1-score:	**86.19%** 
+ [[ 3540   149   625   189   121]
+ [  342  4907   240    62     3]
+ [  623   118 12187  2346   191]
+ [  138    41  2139 18847    75]
+ [   42     1    32   126  7724]]
+Confusion Matrix - distance
+[[76.6  3.2 13.5  4.1  2.6]
+ [ 6.2 88.4  4.3  1.1  0.1]
+ [ 4.   0.8 78.8 15.2  1.2]
+ [ 0.6  0.2 10.1 88.7  0.4]
+ [ 0.5  0.   0.4  1.6 97.5]]
+--duration--
+acc:	**82.70%**   f1-score:	**84.65%** 
+ [[64195  2046  5643  1699   432]
+ [ 4577 28661  1085   266     8]
+ [ 8495   775 40853  4190   269]
+ [ 2974   203  3825 34868   135]
+ [  321     7    61   202  9345]]
+Confusion Matrix - duration
+[[86.7  2.8  7.6  2.3  0.6]
+ [13.2 82.8  3.1  0.8  0. ]
+ [15.6  1.4 74.8  7.7  0.5]
+ [ 7.1  0.5  9.1 83.   0.3]
+ [ 3.2  0.1  0.6  2.  94.1]]
+N_trajectory: 7746
+N_tripleg_true: 10979
+N_tripleg_pred: 10721
+mae_transfer: 0.562528
+####################################################################################################
+####################################################################################################
+**OVERALL** Validate with usersplit & gap_10
+--point--
+acc:	**84.61%**   f1-score:	**86.60%** 
+ [[251460   7782  19275   6148   1829]
+ [ 16324 136380   5206   1207     18]
+ [ 33066   3576 205525  20322   1127]
+ [  9863    811  16663 161242    443]
+ [   999     23    129    559  44652]]
+Confusion Matrix - point
+[[87.8  2.7  6.7  2.1  0.6]
+ [10.3 85.7  3.3  0.8  0. ]
+ [12.5  1.4 78.   7.7  0.4]
+ [ 5.2  0.4  8.8 85.3  0.2]
+ [ 2.2  0.   0.3  1.2 96.3]]
+--distance--
+acc:	**86.49%**   f1-score:	**86.59%** 
+ [[ 3413   150   544   194   120]
+ [  270  4877   246    62     1]
+ [  586   130 12024  2373   184]
+ [  138    39  2016 18885    74]
+ [   30     2    27   140  7690]]
+Confusion Matrix - distance
+[[77.2  3.4 12.3  4.4  2.7]
+ [ 4.9 89.4  4.5  1.1  0. ]
+ [ 3.8  0.8 78.6 15.5  1.2]
+ [ 0.7  0.2  9.5 89.3  0.3]
+ [ 0.4  0.   0.3  1.8 97.5]]
+--duration--
+acc:	**83.25%**   f1-score:	**84.99%** 
+ [[64894  2094  4836  1593   455]
+ [ 4067 29083  1114   279     3]
+ [ 8686   854 40422  4346   261]
+ [ 3048   207  3367 35187   178]
+ [  314    10    54   238  9306]]
+Confusion Matrix - duration
+[[87.8  2.8  6.5  2.2  0.6]
+ [11.8 84.2  3.2  0.8  0. ]
+ [15.9  1.6 74.1  8.   0.5]
+ [ 7.3  0.5  8.  83.8  0.4]
+ [ 3.2  0.1  0.5  2.4 93.8]]
+N_trajectory: 7735
+N_tripleg_true: 10962
+N_tripleg_pred: 10786
+mae_transfer: 0.550265
+####################################################################################################
+####################################################################################################
+**OVERALL** Validate with usersplit & gap_15
+--point--
+acc:	**84.70%**   f1-score:	**86.68%** 
+ [[174436   5718  12611   4353   1210]
+ [ 10780  94932   3489    737     13]
+ [ 23008   2549 138863  14582    743]
+ [  6944    630  10618 112209    304]
+ [   739     16     95    366  30565]]
+Confusion Matrix - point
+[[88.   2.9  6.4  2.2  0.6]
+ [ 9.8 86.3  3.2  0.7  0. ]
+ [12.8  1.4 77.3  8.1  0.4]
+ [ 5.3  0.5  8.1 85.8  0.2]
+ [ 2.3  0.1  0.3  1.2 96.2]]
+--distance--
+acc:	**86.80%**   f1-score:	**86.79%** 
+ [[ 3287   155   535   197   110]
+ [  245  4846   230    63     1]
+ [  562   130 11877  2416   171]
+ [  130    45  1847 18963    71]
+ [   32     2    28   123  7672]]
+Confusion Matrix - distance
+[[76.7  3.6 12.5  4.6  2.6]
+ [ 4.5 90.   4.3  1.2  0. ]
+ [ 3.7  0.9 78.4 15.9  1.1]
+ [ 0.6  0.2  8.8 90.1  0.3]
+ [ 0.4  0.   0.4  1.6 97.6]]
+--duration--
+acc:	**83.37%**   f1-score:	**85.17%** 
+ [[64895  2185  4667  1548   440]
+ [ 3893 29266  1062   261     3]
+ [ 8804   879 40145  4479   235]
+ [ 3042   230  3207 35328   152]
+ [  330    10    47   211  9312]]
+Confusion Matrix - duration
+[[88.   3.   6.3  2.1  0.6]
+ [11.3 84.9  3.1  0.8  0. ]
+ [16.1  1.6 73.6  8.2  0.4]
+ [ 7.2  0.5  7.6 84.2  0.4]
+ [ 3.3  0.1  0.5  2.1 94. ]]
+N_trajectory: 7718
+N_tripleg_true: 10943
+N_tripleg_pred: 10811
+mae_transfer: 0.545189
+####################################################################################################
+####################################################################################################
+**OVERALL** Validate with usersplit & gap_30
+--point--
+acc:	**84.51%**   f1-score:	**86.47%** 
+ [[94799  2804  6489  2472   645]
+ [ 5870 50084  1942   647     3]
+ [12386  1401 71890  8107   369]
+ [ 4036   379  5380 60197   176]
+ [  440    13    58   127 16214]]
+Confusion Matrix - point
+[[88.4  2.6  6.1  2.3  0.6]
+ [10.  85.5  3.3  1.1  0. ]
+ [13.2  1.5 76.4  8.6  0.4]
+ [ 5.8  0.5  7.7 85.8  0.3]
+ [ 2.6  0.1  0.3  0.8 96.2]]
+--distance--
+acc:	**87.10%**   f1-score:	**86.85%** 
+ [[ 3051   132   522   188   117]
+ [  222  4659   260    89     0]
+ [  525   127 11552  2486   158]
+ [  120    46  1590 18921    80]
+ [   32     2    28    63  7632]]
+Confusion Matrix - distance
+[[76.1  3.3 13.   4.7  2.9]
+ [ 4.2 89.1  5.   1.7  0. ]
+ [ 3.5  0.9 77.8 16.7  1.1]
+ [ 0.6  0.2  7.7 91.2  0.4]
+ [ 0.4  0.   0.4  0.8 98.4]]
+--duration--
+acc:	**83.26%**   f1-score:	**85.12%** 
+ [[64867  1955  4464  1597   403]
+ [ 3944 28817  1159   406     1]
+ [ 8761   923 39867  4696   217]
+ [ 3136   250  3213 35112   162]
+ [  338    11    46   119  9363]]
+Confusion Matrix - duration
+[[88.5  2.7  6.1  2.2  0.5]
+ [11.5 83.9  3.4  1.2  0. ]
+ [16.1  1.7 73.2  8.6  0.4]
+ [ 7.5  0.6  7.7 83.9  0.4]
+ [ 3.4  0.1  0.5  1.2 94.8]]
+N_trajectory: 7660
+N_tripleg_true: 10870
+N_tripleg_pred: 10841
+mae_transfer: 0.555382
+####################################################################################################
+####################################################################################################
+**OVERALL** Validate with usersplit & gap_60
+--point--
+acc:	**82.80%**   f1-score:	**84.85%** 
+ [[52117  1665  3431  1291   314]
+ [ 3487 26246  1438   431     5]
+ [ 7008   885 36759  5076   218]
+ [ 2558   292  3643 31359   116]
+ [  278     4    23    85  8810]]
+Confusion Matrix - point
+[[88.6  2.8  5.8  2.2  0.5]
+ [11.  83.   4.5  1.4  0. ]
+ [14.   1.8 73.6 10.2  0.4]
+ [ 6.7  0.8  9.6 82.6  0.3]
+ [ 3.   0.   0.2  0.9 95.8]]
+--distance--
+acc:	**85.73%**   f1-score:	**85.51%** 
+ [[ 2769   135   493   175   136]
+ [  214  4349   340   101     2]
+ [  493   148 10886  2728   162]
+ [  128    68  1741 18201    86]
+ [   29     0    11    77  7453]]
+Confusion Matrix - distance
+[[74.7  3.6 13.3  4.7  3.7]
+ [ 4.3 86.9  6.8  2.   0. ]
+ [ 3.4  1.  75.5 18.9  1.1]
+ [ 0.6  0.3  8.6 90.   0.4]
+ [ 0.4  0.   0.1  1.  98.5]]
+--duration--
+acc:	**82.02%**   f1-score:	**83.94%** 
+ [[64476  1990  4120  1479   345]
+ [ 4144 27756  1585   475     3]
+ [ 8910   988 38678  5436   234]
+ [ 3473   326  3953 33719   173]
+ [  362     4    24   110  9295]]
+Confusion Matrix - duration
+[[89.   2.7  5.7  2.   0.5]
+ [12.2 81.7  4.7  1.4  0. ]
+ [16.4  1.8 71.3 10.   0.4]
+ [ 8.3  0.8  9.5 81.   0.4]
+ [ 3.7  0.   0.2  1.1 94.9]]
+N_trajectory: 7536
+N_tripleg_true: 10716
+N_tripleg_pred: 10728
+mae_transfer: 0.584920
+####################################################################################################
+####################################################################################################
+**OVERALL** Validate with usersplit & gap_120
+--point--
+acc:	**78.97%**   f1-score:	**80.86%** 
+ [[28304  1003  2190   938   287]
+ [ 2484 12329  2160   250     5]
+ [ 3874   972 18681  3111   138]
+ [ 1423   239  2068 16680    77]
+ [  169     5    25    77  4704]]
+Confusion Matrix - point
+[[86.5  3.1  6.7  2.9  0.9]
+ [14.4 71.6 12.5  1.5  0. ]
+ [14.5  3.6 69.8 11.6  0.5]
+ [ 6.9  1.2 10.1 81.4  0.4]
+ [ 3.4  0.1  0.5  1.5 94.5]]
+--distance--
+acc:	**83.30%**   f1-score:	**82.03%** 
+ [[ 2352   130   495   208   171]
+ [  252  3559   774    94     4]
+ [  428   319  9867  3038   162]
+ [  130    70  1521 17582   114]
+ [   27     1    22   136  7010]]
+Confusion Matrix - distance
+[[70.1  3.9 14.7  6.2  5.1]
+ [ 5.4 76.  16.5  2.   0.1]
+ [ 3.1  2.3 71.4 22.   1.2]
+ [ 0.7  0.4  7.8 90.5  0.6]
+ [ 0.4  0.   0.3  1.9 97.4]]
+--duration--
+acc:	**79.02%**   f1-score:	**80.66%** 
+ [[61735  1953  4393  1798   572]
+ [ 5037 23544  4038   455     6]
+ [ 8393  1916 37089  6126   263]
+ [ 3355   497  4070 33008   179]
+ [  303     2    82   192  8989]]
+Confusion Matrix - duration
+[[87.6  2.8  6.2  2.6  0.8]
+ [15.2 71.2 12.2  1.4  0. ]
+ [15.6  3.6 69.  11.4  0.5]
+ [ 8.2  1.2  9.9 80.3  0.4]
+ [ 3.2  0.   0.9  2.  93.9]]
+N_trajectory: 7048
+N_tripleg_true: 10156
+N_tripleg_pred: 9938
+mae_transfer: 0.644939
+####################################################################################################
+####################################################################################################
+**OVERALL** Validate with usersplit & gap_180
+--point--
+acc:	**77.29%**   f1-score:	**79.05%** 
+ [[19770   814  1600   780   228]
+ [ 1881  8078  1879   206     0]
+ [ 2773   837 12683  2234   100]
+ [ 1136   266  1242 11543    64]
+ [  138     7    18    71  3308]]
+Confusion Matrix - point
+[[85.2  3.5  6.9  3.4  1. ]
+ [15.6 67.1 15.6  1.7  0. ]
+ [14.9  4.5 68.1 12.   0.5]
+ [ 8.   1.9  8.7 81.   0.4]
+ [ 3.9  0.2  0.5  2.  93.4]]
+--distance--
+acc:	**82.78%**   f1-score:	**80.46%** 
+ [[ 2084   148   494   226   167]
+ [  247  3099   952   106     0]
+ [  393   366  9343  3085   149]
+ [  123   111  1078 17300   124]
+ [   27     3    19   194  6689]]
+Confusion Matrix - distance
+[[66.8  4.7 15.8  7.2  5.4]
+ [ 5.6 70.4 21.6  2.4  0. ]
+ [ 2.9  2.7 70.1 23.1  1.1]
+ [ 0.7  0.6  5.8 92.3  0.7]
+ [ 0.4  0.   0.3  2.8 96.5]]
+--duration--
+acc:	**77.92%**   f1-score:	**79.34%** 
+ [[59350  2127  4178  2041   573]
+ [ 5105 21458  4970   542     0]
+ [ 8005  2287 36591  6268   266]
+ [ 3546   730  3436 32578   243]
+ [  330    17    63   249  8751]]
+Confusion Matrix - duration
+[[86.9  3.1  6.1  3.   0.8]
+ [15.9 66.9 15.5  1.7  0. ]
+ [15.   4.3 68.5 11.7  0.5]
+ [ 8.7  1.8  8.5 80.4  0.6]
+ [ 3.5  0.2  0.7  2.6 93. ]]
+N_trajectory: 6636
+N_tripleg_true: 9655
+N_tripleg_pred: 9459
+mae_transfer: 0.688762
+####################################################################################################
+####################################################################################################
+**OVERALL** Validate with usersplit & gap_240
+--point--
+acc:	**75.04%**   f1-score:	**76.62%** 
+ [[15299   609  1373   621   245]
+ [ 1691  5726  1679   234     4]
+ [ 2196   850  9468  1760    67]
+ [  847   277  1158  8688    61]
+ [  101     5    24    50  2468]]
+Confusion Matrix - point
+[[84.3  3.4  7.6  3.4  1.4]
+ [18.1 61.3 18.   2.5  0. ]
+ [15.3  5.9 66.  12.3  0.5]
+ [ 7.7  2.5 10.5 78.8  0.6]
+ [ 3.8  0.2  0.9  1.9 93.2]]
+--distance--
+acc:	**81.07%**   f1-score:	**78.03%** 
+ [[ 1905   136   516   235   228]
+ [  278  2689  1068   157     6]
+ [  386   477  8845  3037   116]
+ [  129   142  1232 16476   120]
+ [   20     1    28   156  6343]]
+Confusion Matrix - distance
+[[63.1  4.5 17.1  7.8  7.5]
+ [ 6.6 64.1 25.4  3.7  0.1]
+ [ 3.   3.7 68.8 23.6  0.9]
+ [ 0.7  0.8  6.8 91.   0.7]
+ [ 0.3  0.   0.4  2.4 96.9]]
+--duration--
+acc:	**75.83%**   f1-score:	**77.12%** 
+ [[57209  1944  4546  2120   756]
+ [ 5726 18964  5579   820    11]
+ [ 7884  2940 35296  6460   226]
+ [ 3282   919  4159 31269   305]
+ [  240     5    84   206  8492]]
+Confusion Matrix - duration
+[[85.9  2.9  6.8  3.2  1.1]
+ [18.4 61.  17.9  2.6  0. ]
+ [14.9  5.6 66.8 12.2  0.4]
+ [ 8.2  2.3 10.4 78.3  0.8]
+ [ 2.7  0.1  0.9  2.3 94.1]]
+N_trajectory: 6243
+N_tripleg_true: 9172
+N_tripleg_pred: 8856
+mae_transfer: 0.721326
+####################################################################################################
+####################################################################################################
+**OVERALL** Validate with usersplit & gap_300
+--point--
+acc:	**73.42%**   f1-score:	**74.85%** 
+ [[12397   664  1185   503   226]
+ [ 1499  4357  1478   258     4]
+ [ 1858   931  7464  1433    65]
+ [  750   207   816  7170    44]
+ [   91    11    22    47  2014]]
+Confusion Matrix - point
+[[82.8  4.4  7.9  3.4  1.5]
+ [19.7 57.4 19.5  3.4  0.1]
+ [15.8  7.9 63.5 12.2  0.6]
+ [ 8.3  2.3  9.1 79.8  0.5]
+ [ 4.2  0.5  1.   2.2 92.2]]
+--distance--
+acc:	**80.17%**   f1-score:	**75.89%** 
+ [[ 1749   179   532   234   266]
+ [  290  2313  1127   223     9]
+ [  390   619  8352  3010   122]
+ [  125   127   966 16122   100]
+ [   23     5    30   169  6020]]
+Confusion Matrix - distance
+[[59.1  6.  18.   7.9  9. ]
+ [ 7.3 58.4 28.4  5.6  0.2]
+ [ 3.1  5.  66.9 24.1  1. ]
+ [ 0.7  0.7  5.5 92.4  0.6]
+ [ 0.4  0.1  0.5  2.7 96.4]]
+--duration--
+acc:	**74.72%**   f1-score:	**75.84%** 
+ [[55143  2363  4548  1920   740]
+ [ 5980 16867  5860  1139    18]
+ [ 7754  3851 34158  6332   262]
+ [ 3360   845  3486 31192   241]
+ [  242    25    93   195  8243]]
+Confusion Matrix - duration
+[[85.2  3.7  7.   3.   1.1]
+ [20.  56.5 19.6  3.8  0.1]
+ [14.8  7.4 65.2 12.1  0.5]
+ [ 8.6  2.2  8.9 79.7  0.6]
+ [ 2.8  0.3  1.1  2.2 93.7]]
+N_trajectory: 5921
+N_tripleg_true: 8764
+N_tripleg_pred: 8432
+mae_transfer: 0.754906
+####################################################################################################
